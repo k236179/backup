@@ -1,12 +1,25 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT'] . "/project/project-conn.php");
+
 if (isset($_GET["id_type"]) && isset($_GET["id"])) {
+
+    // SELECT * FROM product,coupon,coupon_valid_product 
+    // WHERE coupon.id=coupon_valid_product.coupon_id AND product.id=coupon_valid_product.product_id AND coupon_id=1;
+
     $id_type = $_GET["id_type"];
     $id = $_GET["id"];
-    $sql = "SELECT * FROM coupon_valid_product WHERE $id_type=$id";
-    $title = "<h3>本次搜索條件 : $id_type=$id</h3>";
+
+    if ("$id_type" == "product_id") {
+        $sql = "SELECT * FROM coupon,coupon_valid_product WHERE coupon.id=coupon_valid_product.coupon_id AND $id_type=$id";
+        $title = "<h3>本次搜索條件 : $id_type=$id</h3>";
+    } else if ("$id_type" == "coupon_id") {
+        $sql = "SELECT * FROM product,coupon_valid_product 
+        WHERE product.id=coupon_valid_product.product_id AND $id_type=$id ";
+
+        $title = "<h3>本次搜索條件 : $id_type=$id</h3>";
+    }
 } else {
-    $sql = "SELECT * FROM coupon_valid_product";
+    $sql = "SELECT * FROM coupon_valid_product ";
     $title = "";
 }
 
@@ -37,7 +50,10 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
             <div class="col-auto">
                 <input type="number" class="form-control" name="id" value="<?= $id ?>">
             </div>
-            <input class="d-none" type="text" name="current" value="coupon_valid_product">
+            <div class="col-auto">
+                <input type="text" class="d-none" value="coupon_valid_product" name="current">
+                <!-- 如果沒有這個，網頁會get不到東西 -->
+            </div>
             <div class="col-auto">
                 <button type="submit" class="btn btn-info text-white">篩選</button>
             </div>
@@ -50,8 +66,9 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
         <?php echo $title ?>
         <tr>
             <th scope="col">id</th>
-            <th scope="col">product id</th>
             <th scope="col">coupon id</th>
+            <th scope="col">product id</th>
+
             <th scope="col"><?php
                             $title = "新增適用商品";
                             $formType = "post-couponValidProduct";
@@ -63,8 +80,8 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
         <?php foreach ($rows as $row) : ?>
             <tr>
                 <td><?= $row["id"] ?></td>
-                <td><?= $row["product_id"] ?></td>
-                <td><?= $row["coupon_id"] ?></td>
+                <td><?= $row['name'] ?></td>
+                <td><?= $row['product_id'] ?></td>
 
             <?php endforeach; ?>
     </tbody>

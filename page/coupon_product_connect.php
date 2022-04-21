@@ -1,28 +1,3 @@
-<?php
-
-require($_SERVER['DOCUMENT_ROOT'] . "/project/project-conn.php");
-
-if (isset($_GET["id_type"]) && isset($_GET["id"])) {
-     $id_type = $_GET["id_type"];
-     $id = $_GET["id"];
-     $sql = "SELECT * FROM coupon_valid_product WHERE $id_type=$id";
-     $title = "<h3>本次搜索條件 : $id_type=$id</h3>";
-} else {
-     $sql = "SELECT * FROM coupon_valid_product";
-     $title = "";
-}
-
-
-
-$result = $conn->query($sql);
-$rows = $result->fetch_all(MYSQLI_ASSOC);
-
-
-?>
-
-
-
-
 <!doctype html>
 <html lang="en">
 
@@ -32,12 +7,7 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
      </title>
      <!-- Required meta tags -->
      <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-     <!-- Bootstrap CSS v5.0.2 -->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-</head>
+     <meta name=</head>
 
 <body>
      <form action="">
