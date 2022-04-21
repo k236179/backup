@@ -19,7 +19,7 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
             <th scope="col">createTime</th>
             <th scope="col">valid</th>
             <th scope="col"><?php
-                            $title = "新增會員";
+                            $title = "新增會員1";
                             $formType = "post-user";
                             require_once("../components/post-offcanvas.php") ?></th>
 
