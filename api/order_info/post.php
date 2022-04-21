@@ -29,7 +29,7 @@ $sql = "INSERT INTO `order_info` (`user`, `coupon`, `create_time`, `delivery`, `
 VALUES ('$user', '$coupon', '$create_time', '$delivery', '$receipent', '$pay', '$status', '$deadline', '$address');";
 
 if ($conn->query($sql) === TRUE) {
-    echo "新增資料完成";
+    echo "<script>alert('刪除資料完成!');location.href=document.referrer;</script>;";
 } else {
     echo "新增資料錯誤: " . $conn->error;
 }
