@@ -10,7 +10,7 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
 ?>
 <!-- 清單 -->
 <div class="form p-3">
-    <h2>優惠券一覽</h2>
+    <h2>優惠券一覽123</h2>
     <table class="table">
         <thead>
             <tr>
@@ -29,15 +29,15 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
         </thead>
         <tbody>
             <?php foreach ($rows as $row) : ?>
-            <tr>
-                <td><?= $row["id"] ?></td>
-                <td><?= $row["name"] ?></td>
-                <td><?= $row["code"] ?></td>
-                <td><?= $row["discount"] ?></td>
-                <td><?= $row["expiry"] ?></td>
-                <td><?= $row["limited"] ?></td>
-                <td><?= $row["valid"] ?></td>
-            </tr>
+                <tr>
+                    <td><?= $row["id"] ?></td>
+                    <td><?= $row["name"] ?></td>
+                    <td><?= $row["code"] ?></td>
+                    <td><?= $row["discount"] ?></td>
+                    <td><?= $row["expiry"] ?></td>
+                    <td><?= $row["limited"] ?></td>
+                    <td><?= $row["valid"] ?></td>
+                </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
