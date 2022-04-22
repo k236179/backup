@@ -40,7 +40,7 @@ $page_count = CEIL($total/$per_page);
 
 
 if($searchId!=''){
-    $joinSql="SELECT * FROM order_info, order_item WHERE order_info.id = order_item.order_info AND `order_info`.`id` = '$searchId' LIMIT $start,$per_page";
+    $joinSql="SELECT * FROM order_info, order_item WHERE order_info.id = order_item.order_info AND `order_info`.`id` = '$searchId' ";
 }else{$joinSql="SELECT * FROM order_info, order_item WHERE order_info.id = order_item.order_info LIMIT $start,$per_page";}
 $result= $conn->query($joinSql);
 $joinTotal=$result->num_rows;
@@ -80,7 +80,7 @@ $join_page_count= CEIL($joinTotal/$per_page);
 
             <?php if($searchId!=''): ?>
             <?php for($i=1; $i<=$join_page_count;$i++): ?>
-            <li class="page-item <?php if($p==$i) echo "active"; ?> "><a class="page-link" href="../page/index.php?current=order-item&p=<?=$i?>&order_info=<?= $info ?>"><?=$i?></a></li>
+            <li class="d-none page-item <?php if($p==$i) echo "active"; ?> "><a class="page-link" href="../page/index.php?current=order-item&p=<?=$i?>&order_info=<?= $info ?>&search_info=<?=$searchId?>"><?=$i?></a></li>
             <?php endfor; ?>
             <?php endif; ?>
         </ul>
@@ -92,7 +92,7 @@ $join_page_count= CEIL($joinTotal/$per_page);
     <?php endif; ?>
 
     <?php if($searchId!=''): ?> 
-    <div>共<?=$joinTotal?>筆資料，<?=$join_page_count?>頁</div>
+    <div>共<?=$joinTotal?>筆資料</div>
     <?php endif; ?>
 </div>
 
