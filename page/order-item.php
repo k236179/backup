@@ -45,6 +45,7 @@ if($searchId!=''){
 $result= $conn->query($joinSql);
 $joinTotal=$result->num_rows;
 $joinRows = $result->fetch_all(MYSQLI_ASSOC);
+$join_page_count= CEIL($joinTotal/$per_page);
 
 // var_dump($joinTotal);
 // var_dump($joinRows);
@@ -70,17 +71,29 @@ $joinRows = $result->fetch_all(MYSQLI_ASSOC);
 
         <nav aria-label="Page navigation example">
         <ul class="pagination">
-            
+            <?php if($searchId==''): ?>
             <?php for($i=1; $i<=$page_count;$i++): ?>
             <li class="page-item <?php if($p==$i) echo "active"; ?> "><a class="page-link" href="../page/index.php?current=order-item&p=<?=$i?>&order_info=<?= $info ?>"><?=$i?></a></li>
             <?php endfor; ?>
-            </li>
+            <?php endif; ?>
+
+
+            <?php if($searchId!=''): ?>
+            <?php for($i=1; $i<=$join_page_count;$i++): ?>
+            <li class="page-item <?php if($p==$i) echo "active"; ?> "><a class="page-link" href="../page/index.php?current=order-item&p=<?=$i?>&order_info=<?= $info ?>"><?=$i?></a></li>
+            <?php endfor; ?>
+            <?php endif; ?>
         </ul>
         
         </nav>
 
-       
+    <?php if($searchId==''): ?>   
     <div>共<?=$total?>筆資料，<?=$page_count?>頁</div>
+    <?php endif; ?>
+
+    <?php if($searchId!=''): ?> 
+    <div>共<?=$joinTotal?>筆資料，<?=$join_page_count?>頁</div>
+    <?php endif; ?>
 </div>
 
 <?php if($searchId==''): ?>
