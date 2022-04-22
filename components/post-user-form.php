@@ -10,28 +10,15 @@
         <input type="text" class="form-control" name="password" id="inpit1" placeholder="輸入">
         <label for="inpit1" class="form-label">gender</label>
         <input type="text" class="form-control" name="gender" id="inpit1" placeholder="輸入">
+        <label for="inpit1" class="form-label">birthday</label>
+        <input type="date" class="form-control" name="birthday" id="inpit1" placeholder="輸入">
+        <label for="inpit1" class="form-label">phone</label></label>
+        <input type="text" class="form-control" name="phone" id="inpit1" placeholder="輸入">
+        <label for="inpit1" class="form-label">photo</label></label>
+        <input type="text" class="form-control" name="photo" id="inpit1" placeholder="輸入">
+     </div>
+    <!-- 送出按鈕 -->
+    <div class="text-center">
+        <button type="submit" class="btn btn-secondary btn-lg ">submit</button>
     </div>
-    <div class="mb-2">
-        <label for="inpit1">birthday</label>
-        <div class="row">
-            <div class="col">
-                <input type="text" id="startY" class="form-control" name="startY" placeholder="YYYY" required>年
-            </div>
-            <div class="col">
-                <input type="text" id="startY" class="form-control" name="startM" placeholder="MM" required>月
-            </div>
-            <div class="col">
-                <input type="text" id="startY" class="form-control" name="startD" placeholder="DD" required>日
-            </div>
-            <div class="mb-3">
-                <label for="inpit1" class="form-label">phone</label></label>
-                <input type="text" class="form-control" name="phone" id="inpit1" placeholder="輸入">
-                <label for="inpit1" class="form-label">photo</label></label>
-                <input type="text" class="form-control" name="photo" id="inpit1" placeholder="輸入">
-            </div>
-
-            <!-- 送出按鈕 -->
-            <div class="text-center">
-                <button type="submit" class="btn btn-secondary btn-lg ">submit</button>
-            </div>
 </form>

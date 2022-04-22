@@ -19,6 +19,9 @@
         <label for="inpit1">expiry</label>
         <div class="row">
             <div class="col">
+                <input type="date" name="date1">
+            </div>
+            <!-- <div class="col">
                 <input type="text" id="startY" class="form-control" name="startY" placeholder="YYYY" required>年
             </div>
             <div class="col">
@@ -26,12 +29,16 @@
             </div>
             <div class="col">
                 <input type="text" id="startY" class="form-control" name="startD" placeholder="DD" required>日
-            </div>
+            </div> -->
             <div class="col">
-                <input type="text" id="startY" class="form-control" name="startH" placeholder="24H" required>時
+                <input type="text" id="startY" value="12:00" class="form-control d-none" name="startH">
             </div>
+
             <div class="row">
                 <div class="col">
+                    <input type="date" name="date2">
+                </div>
+                <!-- <div class="col">
                     <input type="text" id="endY" class="form-control" name="endY" placeholder="YYYY" required>年
                 </div>
                 <div class="col">
@@ -39,9 +46,9 @@
                 </div>
                 <div class="col">
                     <input type="text" id="endD" class="form-control" name="endD" placeholder="DD" required>日
-                </div>
+                </div> -->
                 <div class="col">
-                    <input type="text" id="endH" class="form-control" name="endH" placeholder="24H" required>時
+                    <input type="text" id="endH" value="12:00" class="form-control d-none" name="endH">
                 </div>
 
                 <div class="mb-3">

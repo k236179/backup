@@ -19,16 +19,15 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <title>Document</title>
 </head>
 <style>
-.form {
-    width: 50vw;
-    margin: 3rem auto;
-}
+    .form {
+        width: 50vw;
+        margin: 3rem auto;
+    }
 </style>
 
 <body>
@@ -111,22 +110,22 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
             </thead>
             <tbody>
                 <?php foreach ($rows as $row) : ?>
-                <tr>
-                    <td><?= $row["id"] ?></td>
-                    <td><?= $row["name"] ?></td>
-                    <td><?= $row["code"] ?></td>
-                    <td><?= $row["discount"] ?></td>
-                    <td><?= $row["expiry"] ?></td>
-                    <td><?= $row["limited"] ?></td>
-                    <td><?= $row["valid"] ?></td>
-                    <td><a class="btn btn-info text-white" href="form-post-edit.php?id=<?= $row["id"] ?>">編輯</a></td>
+                    <tr>
+                        <td><?= $row["id"] ?></td>
+                        <td><?= $row["name"] ?></td>
+                        <td><?= $row["code"] ?></td>
+                        <td><?= $row["discount"] ?></td>
+                        <td><?= $row["expiry"] ?></td>
+                        <td><?= $row["limited"] ?></td>
+                        <td><?= $row["valid"] ?></td>
+                        <td><a class="btn btn-info text-white" href="form-post-edit.php?id=<?= $row["id"] ?>">編輯</a></td>
 
-                    <td>
-                        <a class="btn btn-danger" href="form-post-delete.php?id=<?= $row["id"] ?>">刪除</a>
-                    </td>
-                    </form>
-                    <td><a class="btn btn-info text-white" href="form-post-detail.php?id=<?= $row["id"] ?>">詳細</a>
-                </tr>
+                        <td>
+                            <a class="btn btn-danger" href="form-post-delete.php?id=<?= $row["id"] ?>">刪除</a>
+                        </td>
+                        </form>
+                        <td><a class="btn btn-info text-white" href="form-post-detail.php?id=<?= $row["id"] ?>">詳細</a>
+                    </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
@@ -137,11 +136,9 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
 
 </body>
 <!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
 </script>
 
 </html>
