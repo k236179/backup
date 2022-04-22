@@ -9,10 +9,13 @@ if (isset($_GET["id_type"]) && isset($_GET["id"])) {
 
 
     $sql = "SELECT coupon_valid_product. * , 
-    -- 以什麼資料夾為基準
+    -- 以什麼資料夾為基準↑
     product.name AS pro_name ,
     -- 因為coupon 與 product 兩個檔案有相同的name所以我設定product的name 變更為 pro_name
     coupon.name, 
+    coupon.discount,
+    coupon.expiry,
+    coupon.limited,
     product.price,
     product.inventory ,
     product.createTime 
@@ -54,6 +57,7 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
 
 <!-- 清單 -->
 <h2>優惠券適用商品</h2>
+<h2>為什麼couponid 超過10就會顯示錯誤，10以內就不會</h2>
 <table class="table">
     <thead>
         <form action="../page/index.php">
@@ -78,9 +82,7 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
                 <button type="submit" class="btn btn-info text-white">篩選</button>
             </div>
 
-            <div class="col-auto">
-                <a class="btn btn-info text-white" href="http://localhost:8080/project/page/index.php?current=coupon_valid_product">重新篩選</a>
-            </div>
+
         </form>
 
 
@@ -92,29 +94,55 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
                             require("../components/post-offcanvas.php") ?></div>
 
     </thead>
-    <tbody>
-        <h3><?= $id_type ?>=<?= $id ?>的商品</h3>
+    <?php if (($_GET["id_type"] == "product_id")) : ?>
 
+
+        <h3><?= $id_type ?>=<?= $id ?><?= $rows[0]["pro_name"] ?></h3>
         <div class="row">
-            <?php foreach ($rows as $row) : ?>
-                <div class="col-3 gy-3">
-                    <div class="card ">
-                        <div class="card-body">
-                            <h5 class="card-title"><?= $row["pro_name"] ?></h5>
-                        </div>
+            <h5 class="card-title"></h5>
+            <div class="col-3 gy-3">
+                <div class="card ">
+                    <div class="card-body">
+
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">製造日期<?= $row["createTime"] ?></li>
-                            <li class="list-group-item">庫存: <?= $row["inventory"] ?></li>
-                            <li class="list-group-item">價格: <?= $row["price"] ?></li>
-                            <li class="list-group-item">Coupon: <?= $row["name"] ?></li>
+                            <li class="list-group-item">製造日期<?= $rows[0]["createTime"] ?></li>
+                            <li class="list-group-item">庫存: <?= $rows[0]["inventory"] ?></li>
+                            <li class="list-group-item">價格: <?= $rows[0]["price"] ?></li>
+                            <?php foreach ($rows as $row) : ?>
+                                <li class="list-group-item">Coupon: <?= $row["name"] ?></li>
+                            <?php endforeach; ?>
                         </ul>
+
                     </div>
                 </div>
-            <?php endforeach; ?>
-        </div>
 
-    </tbody>
+            <?php else : ?>
+
+                <h3><?= $rows[00]["name"] ?></h3>
+                <div class="row">
+                    <h5 class="card-title"></h5>
+                    <div class="col-3 gy-3">
+                        <div class="card ">
+                            <div class="card-body">
+
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">折扣<?= $rows[0]["discount"] ?></li>
+                                    <li class="list-group-item">使用期限: <?= $rows[0]["expiry"] ?></li>
+                                    <li class="list-group-item">使用次數: <?= $rows[0]["limited"] ?></li>
+                                    <?php foreach ($rows as $row) : ?>
+                                        <li class="list-group-item">商品名稱: <?= $row["pro_name"] ?></li>
+                                    <?php endforeach; ?>
+                                </ul>
+
+                            </div>
+                        </div>
+
+                    <?php endif; ?>
+
 </table>
+<div class="col-auto">
+    <a class="btn btn-info text-white" href="http://localhost:8080/project/page/index.php?id_type=product_id&id=1&current=coupon_valid_product">重新篩選</a>
+</div>
 
 <?php
 $conn->close();
