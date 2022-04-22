@@ -58,6 +58,7 @@ $page_count = CEIL($total / $per_page);
             </tr>
         </thead>
         <tbody>
+
             <?php foreach ($rows as $row) : ?>
                 <tr>
                     <td><?= $row["id"] ?></td>
@@ -67,6 +68,12 @@ $page_count = CEIL($total / $per_page);
                     <td><?= $row["expiry"] ?></td>
                     <td><?= $row["limited"] ?></td>
                     <td><?= $row["valid"] ?></td>
+                    <td><a class="btn btn-info text-white" href="http://localhost:8080/project/api/coupon/備用/form-post-edit.php?id=<?= $row["id"] ?>">編輯</a></td>
+
+                    <td>
+                        <a class="btn btn-danger" href="http://localhost:8080/project/api/coupon/備用/form-post-delete.php?id=<?= $row["id"] ?>">刪除</a>
+                    </td>
+
                 </tr>
             <?php endforeach; ?>
         </tbody>
