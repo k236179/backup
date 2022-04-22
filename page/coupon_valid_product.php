@@ -9,14 +9,20 @@ if (isset($_GET["id_type"]) && isset($_GET["id"])) {
 
 
     $sql = "SELECT coupon_valid_product. * , 
+    -- 以什麼資料夾為基準
     product.name AS pro_name ,
+    -- 因為coupon 與 product 兩個檔案有相同的name所以我設定product的name 變更為 pro_name
     coupon.name, 
     product.price,
     product.inventory ,
     product.createTime 
+    -- 以上四個是從coupon 與 product 裡個檔案中我要拿出來加入coupon_valid_product的資料
     FROM product,coupon_valid_product,coupon 
+    -- 我要關聯的資料
     WHERE coupon.id=coupon_valid_product.coupon_id 
-    AND product.id=coupon_valid_product.product_id AND $id_type=$id ";
+    AND product.id=coupon_valid_product.product_id 
+    -- 將這些資料合併的基準是什麼以上面的方式呈現
+    AND $id_type=$id ";
 } else {
     $id_type = "product_id";
     $id = 1;
