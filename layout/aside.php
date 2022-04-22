@@ -11,6 +11,7 @@
             <div class="accordion-body p-0 text-center ">
                 <ul class="list-group ">
                     <li class="list-group-item"><a href="../page/index.php?current=product">商品一覽</a></li>
+                    <li class="list-group-item"><a href="../page/index.php?current=product-card">圖片列表</a></li>
                     <li class="list-group-item"><a href="../page/index.php?current=comment">商品評論</a></li>
                 </ul>
             </div>
