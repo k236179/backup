@@ -1,7 +1,7 @@
 <div class="accordion accordion-flush" id="aside-menu">
     <div class="accordion-item">
         <h2 class="accordion-header" id="aside-product-title">
-            <button class="accordion-button collapsed ps-5" type="button" data-bs-toggle="collapse"
+            <button class="accordion-button collapsed ps-5 " type="button" data-bs-toggle="collapse"
                 data-bs-target="#aside-product-control" aria-expanded="false" aria-controls="aside-product-control">
                 商品管理
             </button>

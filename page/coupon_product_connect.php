@@ -4,12 +4,6 @@
 <head>
     <title>
 
-<<<<<<< HEAD
-     </title>
-     <!-- Required meta tags -->
-     <meta charset="utf-8">
-     <meta name=</head>
-=======
     </title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -20,7 +14,6 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 </head>
->>>>>>> 7f3b1f329674fb6ef830ac0c57ff04dfabec6d5c
 
 <body>
     <form action="">
@@ -54,11 +47,11 @@
         <tbody>
             <?php foreach ($rows as $row) : ?>
             <?php
-                    $id = $row['product_id'];
-                    $sql = "SELECT * FROM product WHERE id=$id";
-                    $productResult = $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
-                    $currentProduct = $productResult["0"];
-                    ?>
+                $id = $row['product_id'];
+                $sql = "SELECT * FROM product WHERE id=$id";
+                $productResult = $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
+                $currentProduct = $productResult["0"];
+                ?>
 
             <tr>
 

@@ -1,6 +1,6 @@
 <?php
-$list = array("商品", "課程", "會員", "訂單", "優惠券");
-$listEn = array("product", "class", "user", "order-info", "coupon");
+$list = array("商品", "課程", "會員", "訂單", "優惠券", "template");
+$listEn = array("product", "class", "user", "order-info", "coupon", "template");
 ?>
 
 <nav class="navbar navbar-light px-5 pt-3 pb-0 " style="background-color: #e3f2fd;">
@@ -27,7 +27,8 @@ $listEn = array("product", "class", "user", "order-info", "coupon");
                     }
                     ?>
                 <li class="nav-item">
-                    <a class="nav-link <?= $active ?>" href="./index.php?current=<?= $listEn["$i"] ?>"><?= $link ?></a>
+                    <a class="nav-link <?= $active ?>"
+                        href="./index.php?current=<?= $listEn["$i"] ?>&user"><?= $link ?></a>
                 </li>
                 <?php $i++; ?>
                 <?php endforeach; ?>
