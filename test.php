@@ -1,0 +1,1 @@
+SELECT * FROM order_info, order_item WHERE order_info.id = order_item.order_info;

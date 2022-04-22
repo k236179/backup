@@ -26,9 +26,9 @@
 let keys = ["product", "order_info", "class", "counter", "memo", "valid"]; //example
 //
 // 宣告 欲送出的 [value]
-let productValue = ['cookie', 'cake', 'brownie', 'cookie', 'cake', 'brownie']; //example
-let order_infoValue = ['cookie', 'cake', 'brownie', 'cookie', 'cake', 'brownie']; //example
-let classValue = ['cookie', 'cake', 'brownie', 'cookie', 'cake', 'brownie']; //example
+let productValue = [3, 2, 1, 3, 2, 1]; //example
+let order_infoValue = [3, 2, 1, 3, 2, 1]; //example
+let classValue = [3, 2, 1, 3, 2, 1]; //example
 let counterValue = [3, 2, 1, 3, 2, 1]; //example
 let memoValue = ['3', '2', '1', '3', '2', '1']; //example
 let validValue = [1, 1, 1, 1, 1, 1]; //example
