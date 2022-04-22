@@ -87,7 +87,7 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
                 </tbody>
               </table>
               <div class="d-flex justify-content-end">
-                    <a class="btn btn-secondary me-2" href="../page/index.php?current=order-item">取消</a>
+                    <a class="btn btn-secondary me-2" href="../page/index.php?current=order-item&order_info=">取消</a>
                     <button class="btn btn-secondary" type="submit">完成</button> 
               </div>
     </form> 
