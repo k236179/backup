@@ -1,6 +1,6 @@
 <div class="form p-3">
     <!-- 表單 -->
-    <form action="../api/order-item/post.php" method="post">
+    <form action="../api/order_item/post.php" method="post">
         <!-- 普通欄位 -->
         <div class="mb-3">
             <label for="inpit1" class="form-label">產品名稱</label>

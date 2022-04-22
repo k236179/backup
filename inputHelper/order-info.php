@@ -26,19 +26,15 @@
 let keys = ["user", "coupon", "delivery", "receipent", "address", "pay", "status", "valid", "deadline"]; //example
 //
 // 宣告 欲送出的 [value]
-let userValue = ["1", "2", '3', '4', '5', '6', '7', '8', '9']; //example
-let couponValue = [9, 9, 9, 9, 9, 9, 9, 9, 9]; //example
-let deliveryValue = ['mail', 'store', 'mail', 'store', 'mail', 'store', 'mail', 'store', 'mail']; //example
-let receipentValue = ['coco', 'emily', 'michael', 'john', 'tim', 'justin', 'camille', 'janny', 'katrina']; //example
-let addressValue = ['taipei', 'tauyuan', 'kenting', 'taipei', 'tauyuan', 'kenting', 'taipei', 'tauyuan',
-    'kenting',
-]; //example
-let payValue = ['1', '1', '1', '1', '0', '0', '0', '1', '0']; //example
-let statusValue = ['received', 'received', 'received', 'received', 'received', 'received', 'received', 'received',
-    'received'
-]; //example
-let validValue = [1, 1, 1, 1, 1, 1, 1, 1, 1]; //example
-let deadlineValue = ['1', '9', '8', '7', '6', '5', '3', '2', '1']; //example
+let userValue = ["1", "2", '3', '4', '5', '6', '7', '8', '9', '10']; //example
+let couponValue = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; //example
+let deliveryValue = ['mail', 'store', 'mail', 'store', 'mail', 'store', 'mail', 'store', 'mail', 'mail']; //example
+let receipentValue = ['coco', 'emily', 'michael', 'john', 'tim', 'justin', 'camille', 'janny', 'katrina', 'rick']; //example
+let addressValue = ['taipei', 'tauyuan', 'kenting', 'taipei', 'tauyuan', 'kenting', 'taipei', 'tauyuan', 'kenting', 'taipei']; //example
+let payValue = ['cash', 'credit card','cash', 'credit card','cash', 'credit card','cash', 'credit card','cash', 'credit card']; //example
+let statusValue = ['received', 'received', 'received', 'received', 'received', 'received', 'received', 'received','received','received']; //example
+let validValue = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]; //example
+let deadlineValue = ['1', '9', '8', '7', '6', '5', '3', '2', '1', '5']; //example
 //
 // 宣告 目標網址
 let url = "http://localhost:8080/project/api/order_info/post.php"; //example

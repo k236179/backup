@@ -9,16 +9,24 @@ if(!isset($_GET["p"])){
 
 $per_page=4;
 $start=($p-1)*$per_page;
+$user=$_GET["user"];
 
+if($user!=""){
+    $sql="SELECT * FROM order_info WHERE user = '$user' LIMIT $start,$per_page ";
+    $pageSql="SELECT *FROM order_info WHERE user = '$user' ";
+}else{
+    $sql="SELECT * FROM order_info LIMIT $start,$per_page ";
+    $pageSql="SELECT *FROM order_info ";
+}
 
-$sql = "SELECT * FROM order_info LIMIT $start,$per_page";
+//$sql = "SELECT * FROM order_info LIMIT $start,$per_page";
 
 $result = $conn->query($sql);
 $rows = $result->fetch_all(MYSQLI_ASSOC);
 
 
-$sql = "SELECT *FROM order_info";
-$result = $conn->query($sql);
+//$sql = "SELECT *FROM order_info";
+$result = $conn->query($pageSql);
 $total = $result->num_rows;
 $page_count = CEIL($total/$per_page);
 
@@ -37,7 +45,7 @@ $page_count = CEIL($total/$per_page);
   <ul class="pagination">
    
   <?php for($i=1; $i<=$page_count;$i++): ?>
-            <li class="page-item <?php if($p==$i) echo "active"; ?> "><a class="page-link" href="../page/index.php?current=order-info&p=<?=$i?>"><?=$i?></a></li>
+            <li class="page-item <?php if($p==$i) echo "active"; ?> "><a class="page-link" href="../page/index.php?current=order-info&p=<?=$i?>&user=<?=$user?>"><?=$i?></a></li>
             <?php endfor; ?>
           
     
@@ -52,7 +60,6 @@ $page_count = CEIL($total/$per_page);
     <thead>
         <tr>
             <th scope="col">#</th> 
-            <th scope="col">ID</th>
             <th scope="col">USER</th>
            
             <th scope="col">CREATE TIME</th>
@@ -67,6 +74,7 @@ $page_count = CEIL($total/$per_page);
                             $title = "新增訂單";
                             $formType = "post-order-info";
                             require_once("../components/post-offcanvas.php") ?></th>
+                            <th> <a href="../page/index.php?current=order-info&user=" class="btn btn-secondary">回列表</a></th>
         </tr>
     </thead>
     <tbody>
@@ -74,34 +82,23 @@ $page_count = CEIL($total/$per_page);
         <?php if ($rows > 0) : ?>
             <?php foreach ($rows as $row) : ?>
                 <tr>
-                    <td>#</td>
+                    <?php $userId=$row['user'] ?>
                     <td><?= $row["id"] ?></td>
-                    <td><?= $row["user"] ?></td>
-                    <!-- <td> <input class="form-control" name="product" value="" type="text"></td> -->
+                    <td> <a href="../page/index.php?current=order-info&user=<?= $userId ?>"> <?= $row["user"] ?></a></td>
                     <td><?= $row["create_time"] ?></td>
-                    <!-- <td> <input class="form-control" name="valid" value="" type="text"></td> -->
                     <td><?= $row["delivery"] ?></td>
-                    <!-- <td> <input class="form-control" name="class" value="" type="text"></td> -->
                     <td><?= $row["receipent"] ?></td>
-                    <!-- <td> <input class="form-control" name="counter" value="" type="text"></td> -->
-                  
                     <td><?= $row["pay"] ?></td>
-                    <!-- <td> <input class="form-control" name="valid" value="" type="text"></td> -->
                     <td><?= $row["status"] ?></td>
-                    <!-- <td> <input class="form-control" name="valid" value="" type="text"></td> -->
                     <td><?= $row["valid"] ?></td>
-                    <!-- <td> <input class="form-control" name="valid" value="" type="text"></td> -->
                     <td><?= $row["deadline"] ?></td>
-                    <!-- <td> <input class="form-control" name="valid" value="" type="text"></td> -->
                     <td> <a href="#"> <?= $row["coupon"] ?></a></td>
-                    <!-- <td> <input class="form-control" name="order_info" value="" type="text"></td> -->
                     <td><a class="btn btn-danger me-2" href="../components/delete_order_info.php?id=<?=$row["id"]?>">刪除</a></td>
                     <td><a class="btn btn-secondary me-2" href="../components/edit_order_info.php?id=<?=$row["id"]?>">編輯</a></td>
                 </tr>
                 
                 <tr>
-                    <td></td>
-                    <td><?= $row["id"] ?></td>
+                    
                     <th scope="col">ADDRESS</th>
                     <td><?= $row["address"] ?></td>
                     <!-- <td> <input class="form-control" name="memo" value="" type="text"></td> -->
