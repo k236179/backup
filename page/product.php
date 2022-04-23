@@ -11,7 +11,7 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
 
 ?>
 <!-- 清單 -->
-<h2>商品一覽</h2>
+<h2>商品一覽 test</h2>
 <table class="table">
     <thead>
         <tr>
