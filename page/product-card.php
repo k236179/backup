@@ -1,15 +1,13 @@
 <?php
     require($_SERVER['DOCUMENT_ROOT'] . "/project-conn.php");
 
-    $sql = "SELECT `images`.`name` AS `img_name`,`product`.* FROM images, product WHERE images.product_id = product.id";
+    // $sql = "SELECT `images`.`name` AS `img_name`,`product`.* FROM images, product WHERE images.product_id = product.id";
+
+    $sql = "SELECT `images`.`name` AS `img_name`,`product`.*, COUNT(product_id) as times FROM images, product WHERE images.product_id = product.id  GROUP BY product_id";
     
     $result = $conn -> query($sql);
     $rows = $result->fetch_all(MYSQLI_ASSOC);
 
-    // $product = $_GET["product_id"]
-    // $sql = "SELECT * FROM images WHERE images.product_id = $product";
-    // $result = $conn -> query($sql);
-    // $imgCount = $result -> num_rows;
 ?>
 
 
@@ -34,14 +32,42 @@
 <?php foreach($rows as $row): ?>
 <?php $picture_name = $row["img_name"] ?>
 <?php $pro_id = $row["id"] ?>
+<!-- <//?php $pro_id_count = $rows["id"] ?> -->
+<!-- <//?php print_r(array_count_values($pro_id)); ?> -->
 
 <div class="col-lg-4 col-md-6 py-2 gx-4">
 
     <div class="card shadow mb-3 mx-auto position-relative overflow-auto" style="max-width: 400px; height: 450px">
         <div class="row g-0">
+
+            <?php if($row["times"] <= 1): ?>
             <!-- <div class="col-md-6"> -->
                 <img src="../img/product/<?=$picture_name?>" class="product-img position-absolute rounded-start" alt="...">
             <!-- </div> -->
+            <?php else: ?>
+                <!-- 輪播圖 -->
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                        <img src="../img/product/<?=$picture_name?>" class="d-block w-100 rounded-start" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                        <img src="..." class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                        <img src="..." class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            <?php endif; ?>
 
             <div class="card-body py-4 px-5">
                 <div class="table-background p-3 rounded-3">
@@ -99,37 +125,4 @@
 
 </div>
 <?php endforeach; ?>
-</div>
-
-
-<!-- 輪播圖 -->
-<!-- <//?php $picture_name = $row["img_name"] ?> -->
-
-
-<!-- <//?php 
-    $product = $_GET["product_id"]
-    $sql = "SELECT * FROM images WHERE images.product_id = $product";
-    $result = $conn -> query($sql);
-    $imgCount = $result -> num_rows; ?> -->
-
-<div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="../img/product/<?=$picture_name?>" class="d-block w-100" alt="...">
-    </div>
-    <!-- <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div> -->
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
 </div>
