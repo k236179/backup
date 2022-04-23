@@ -118,7 +118,7 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
 
             <?php else : ?>
 
-                <h3><?= $rows[00]["name"] ?></h3>
+                <h3><?= $rows[0]["name"] ?></h3>
                 <div class="row">
                     <h5 class="card-title"></h5>
                     <div class="col-3 gy-3">
