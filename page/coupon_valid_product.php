@@ -15,7 +15,9 @@ if (isset($_GET["id_type"]) && isset($_GET["id"])) {
     coupon.name, 
     coupon.discount,
     coupon.expiry,
+    coupon.code, 
     coupon.limited,
+    coupon.valid, 
     product.price,
     product.inventory ,
     product.createTime 
@@ -27,17 +29,23 @@ if (isset($_GET["id_type"]) && isset($_GET["id"])) {
     -- 將這些資料合併的基準是什麼以上面的方式呈現
     AND $id_type=$id ";
 } else {
+
     $id_type = "product_id";
     $id = 1;
     $sql = "SELECT coupon_valid_product. * , 
     product.name AS pro_name ,
     coupon.name, 
+    coupon.discount,
+    coupon.expiry,
+    coupon.code, 
+    coupon.limited,
+    coupon.valid, 
     product.price,
     product.inventory ,
     product.createTime 
     FROM product,coupon_valid_product,coupon 
     WHERE coupon.id=coupon_valid_product.coupon_id 
-    AND product.id=coupon_valid_product.product_id AND $id_type=$id ";
+    AND product.id=coupon_valid_product.product_id  ";
 }
 
 
@@ -61,6 +69,7 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
 <table class="table">
     <thead>
         <form action="../page/index.php">
+            <!-- 功能為導去哪一個網址 -->
             <select name="id_type" class="form-select" aria-label="Default select example">
                 <option value="product_id" <?php if (isset($_GET["id_type"]) && $_GET["id_type"] == "product_id") {
                                                 echo "selected";
@@ -94,27 +103,53 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
                             require("../components/post-offcanvas.php") ?></div>
 
     </thead>
-    <?php if (($_GET["id_type"] == "product_id")) : ?>
+    <?php if (($id_type == "product_id")) : ?>
+        <!-- 如果是以商品篩選的話要做以下動作 -->
+        <li class="list-group-item">商品名稱<?= $rows[0]["pro_name"] ?></li>
+        <li class="list-group-item">製造日期<?= $rows[0]["createTime"] ?></li>
+        <li class="list-group-item">庫存: <?= $rows[0]["inventory"] ?></li>
+        <li class="list-group-item">價格: <?= $rows[0]["price"] ?></li>
 
-
-        <h3><?= $id_type ?>=<?= $id ?><?= $rows[0]["pro_name"] ?></h3>
         <div class="row">
             <h5 class="card-title"></h5>
-            <div class="col-3 gy-3">
-                <div class="card ">
-                    <div class="card-body">
+            <div class=" row">
+                <?php foreach ($rows as $row) : ?>
+                    <div class="card m-3" style="max-width: 540px">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-md-4 ">
+                                <img src="../img/icon/coupon.png" class="img-fluid rounded-start" alt="..." />
+                            </div>
+                            <div class="col-md-8">
 
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">製造日期<?= $rows[0]["createTime"] ?></li>
-                            <li class="list-group-item">庫存: <?= $rows[0]["inventory"] ?></li>
-                            <li class="list-group-item">價格: <?= $rows[0]["price"] ?></li>
-                            <?php foreach ($rows as $row) : ?>
-                                <li class="list-group-item">Coupon: <?= $row["name"] ?></li>
-                            <?php endforeach; ?>
-                        </ul>
+                                <div class="card-body">
+                                    <h5 class="card-title"><strong>Coupon# <?= $row["id"] ?></strong></h5>
+                                    <p class="card-text mb-0"><span><strong>優惠券 :</strong></span><?= $row["name"] ?></p>
+                                    <p class="card-text mb-0"><span><strong>序號 : </strong></span><?= $row["code"] ?></p>
+                                    <p class="card-text mb-0"><span><strong>折扣% : </strong></span><?= $row["discount"] ?></p>
+                                    <p class="card-text mb-0"><span><strong>使用期限 : </strong></span></p>
+                                    <p><?= $row["expiry"] ?></p>
+                                    <p class="card-text mb-0"><span><strong>使用次數 : </strong></span><?= $row["limited"] ?></p>
+                                    <p class="card-text mb-0"><span><strong>啟用:</strong></span><?= $row["valid"] ?></p>
 
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="btn-group" role="group" aria-label="Basic outlined example">
+                                    <button type="button" class="btn btn-outline-primary">
+                                        <a href="http://localhost:8080/project/api/coupon/備用/form-post-edit.php?id=<?= $row["id"] ?>">編輯</a></button>
+                                    <button type="button" class="btn btn-outline-primary">
+                                        <a href="http://localhost:8080/project/api/coupon/備用/form-post-delete.php?id=<?= $row["id"] ?>">刪除</a></button>
+
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
-                </div>
+                <?php endforeach; ?>
+
+
+
+
 
             <?php else : ?>
 

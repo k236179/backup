@@ -55,9 +55,11 @@ $page_count = CEIL($total / $per_page);
                     </div>
                     <div class="row">
                          <div class="btn-group" role="group" aria-label="Basic outlined example">
-                              <button type="button" class="btn btn-outline-primary">編輯</button>
-                              <button type="button" class="btn btn-outline-primary">刪除</button>
-                              <button type="button" class="btn btn-outline-primary">問題</button>
+                              <button type="button" class="btn btn-outline-primary">
+                                   <a href="http://localhost:8080/project/api/coupon/備用/form-post-edit.php?id=<?= $row["id"] ?>">編輯</a></button>
+                              <button type="button" class="btn btn-outline-primary">
+                                   <a href="http://localhost:8080/project/api/coupon/備用/form-post-delete.php?id=<?= $row["id"] ?>">刪除</a></button>
+
                          </div>
 
                     </div>
