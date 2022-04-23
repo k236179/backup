@@ -80,7 +80,7 @@ $page_count = CEIL($total/$per_page);
                     <button type="button" class="btn-sm btn-success">
                         商品清單
                     </button>
-                    <button type="button" class="btn-sm btn-success">詳細</button>
+                    <button type="button" class="btn-sm btn-success">  詳細</button>
                     <button type="button" class="btn-sm btn-warning">編輯</button>
                     <button type="button" class="btn-sm btn-danger">刪除</button>
                 </td>
