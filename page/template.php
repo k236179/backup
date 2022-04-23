@@ -191,4 +191,38 @@
             <p class="text-center m-2"><small class="text-muted">下單時間 : 2022/04/20/18/0</small></p>
         </div>
     </div>
+
+    <!-- 標準方塊 user -->
+    <h3>User方塊</h3>
+    <div class="card m-3 p-3" style="max-width: 540px">
+        <div class="row g-0 align-items-center  mb-3">
+            <div class="col-md-4 ">
+                <img src="../img/user/user001.jpg" class="img-fluid rounded-circle" alt="..." />
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"><strong>User #001</strong></h5>
+                    <p class="card-text mb-0"><span><strong>姓名 : </strong></span>吐司貓</p>
+                    <p class="card-text mb-0"><span><strong>帳戶 : </strong></span>toastcat5566@mail.com</p>
+                    <p class="card-text mb-0"><span><strong>電話 : </strong></span>0912345678</p>
+                    <p class="card-text mb-0"><span><strong>啟用 : </strong></span>1</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="btn-group  mb-1" role="group" aria-label="Basic outlined example">
+                <button type="button" class="btn btn-outline-primary">訂單</button>
+                <button type="button" class="btn btn-outline-primary">收藏</button>
+                <button type="button" class="btn btn-outline-primary">回報</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="btn-group  mb-3" role="group" aria-label="Basic outlined example">
+                <button type="button" class="btn btn-outline-primary">變更</button>
+                <button type="button" class="btn btn-outline-primary">封鎖</button>
+                <button type="button" class="btn btn-outline-primary">刪除</button>
+            </div>
+            <p class="text-center m-2"><small class="text-muted">建立時間 : 2022/04/20/18/0</small></p>
+        </div>
+    </div>
 </div>
