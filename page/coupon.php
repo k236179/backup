@@ -34,17 +34,17 @@ $page_count = CEIL($total / $per_page);
 
 <h3>優惠券一覽</h3>
 <div class="row">
-
      <table class="table table-striped table-hover my-3">
           <thead>
                <tr>
                     <th>編號</th>
-                    <th>優惠券</th>
-                    <th>序號</th>
-                    <th>折扣%</th>
-                    <th>使用期限</th>
-                    <th>使用次數</th>
-                    <th>啟用</th>
+                    <th><img src="../img/icon/ticket.png" class="img-fluid rounded-start" style="max-width:25px" /> 優惠券</th>
+                    <!-- bs5 照片大小使用style -->
+                    <th><img src="../img/icon/barcode.png" class="img-fluid rounded-start" style="max-width:25px" /> 序號</th>
+                    <th><img src="../img/icon/discount.png" class="img-fluid rounded-start" style="max-width:25px" /> 折扣%</th>
+                    <th colspan="2"><img src="../img/icon/date.png" class="img-fluid rounded-start" style="max-width:25px" /> 使用期限</th>
+                    <th><img src="../img/icon/limited.png" class="img-fluid rounded-start" style="max-width:25px" /> 使用次數</th>
+                    <th><img src="../img/icon/valid.png" class="img-fluid rounded-start" style="max-width:25px" /> 啟用</th>
                     <th scope="col"><?php
                                         $title = "新增優惠券";
                                         $formType = "post-coupon";
@@ -66,10 +66,10 @@ $page_count = CEIL($total / $per_page);
                     </tr>
                     <tr>
                          <td class="text-center"><img style="width: 1.5rem;" src="../img/icon/sticky-notes.png" alt=""></td>
-                         <td colspan="5">
+                         <td colspan="6">
                               <span class="text-muted"><small>備註內容</small></span>
                          </td>
-                         <td colspan="2" class="text-center">
+                         <td colspan="1" class="text-center">
 
                               <button type="button" class="btn-sm btn-info ">
                                    <a class="text-white" href="/project/page/index.php?id_type=coupon_id&id=<?= $row["id"] ?>&current=coupon_valid_product">詳細資訊</a></button>
