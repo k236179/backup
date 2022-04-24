@@ -47,19 +47,19 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
                 <?php  foreach($rows as $row): ?>
                 
                         <tr>
-                            <td></td>
-                            <td><input class="form-control" name="id"  value="<?=$row["id"] ?>" type="hidden"></td>
+                            <td>ID</td>
+                            <td><?=$row["id"] ?></td>
                             
                         </tr>
 
                         <tr>
                             <td>USER</td>
-                            <td> <input class="form-control" name="user" value="<?=$row["user"] ?>" type="text"></td>
+                            <td> <?=$row["user"] ?></td>
                         </tr>
 
                         <tr>
                             <td>COUPON</td>
-                            <td> <input class="form-control" name="coupon" value="<?=$row["coupon"] ?>" type="text"></td>
+                            <td><?=$row["coupon"] ?></td>
                         </tr>
 
                         <tr>
@@ -69,36 +69,36 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
                         </tr>
                         <tr>
                             <td>DELIVERY</td>
-                            <td> <input class="form-control" name="delivery" value="<?=$row["delivery"] ?>" type="text"></td>
+                            <td><?=$row["delivery"] ?></td>
                         </tr>
                         <tr>
                             <td>RECEIPENT</td>
-                            <td> <input class="form-control" name="receipent" value="<?=$row["receipent"] ?>" type="text"></td>
+                            <td><?=$row["receipent"] ?></td>
                         </tr>
 
                         <tr>
                             <td>ADDRESS</td>
-                            <td> <input class="form-control" name="address" value="<?=$row["address"] ?>" type="text"></td>
+                            <td> <?=$row["address"] ?></td>
                         </tr>
 
                         <tr>
                             <td>PAY</td>
-                            <td> <input class="form-control" name="pay" value="<?=$row["pay"] ?>" type="text"></td>
+                            <td><?=$row["pay"] ?></td>
                         </tr>
 
                         <tr>
                             <td>STATUS</td>
-                            <td> <input class="form-control" name="status" value="<?=$row["status"] ?>" type="text"></td>
+                            <td> <?=$row["status"] ?></td>
                         </tr>
 
                         <tr>
                             <td>VALID</td>
-                            <td> <input class="form-control" name="valid" value="<?=$row["valid"] ?>" type="text"></td>
+                            <td> <?=$row["valid"] ?></td>
                         </tr>
 
                         <tr>
                             <td>DEADLINE</td>
-                            <td> <input class="form-control" name="deadline" value="<?=$row["deadline"] ?>" type="text"></td>
+                            <td><?=$row["deadline"] ?></td>
                         </tr>
 
                         
@@ -109,39 +109,7 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
                 </tbody>
               </table>
               <div class="d-flex justify-content-end">
-                  <button class="btn btn-secondary me-2" type="submit">完成</button> 
-                    <a class="btn btn-secondary" href="../page/index.php?current=order-info">取消</a>
+                  
+                    <a class="btn btn-secondary" href="../page/index.php?current=order-info">回列表</a>
               </div>
     </form> 
-</div>
-      
-    
-</body>
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-</script>
-
-</html>
-
-
-<!-- jquery ajax -->
-<!-- 
-$.ajax({
-            method: "POST",
-            url: "api-users.php",
-            dataType: "json",
-        })
-        .done(function(response) {
-            // console.log(response)
-            response.forEach(function(user) {
-                document.write(`${user.name}: ${user.email}<br>`);
-            })
-
-        }).fail(function(jqXHR, textStatus) {
-            console.log("Request failed: " + textStatus);
-        }); 
--->

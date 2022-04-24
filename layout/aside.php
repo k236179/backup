@@ -57,7 +57,7 @@
             <div class="accordion-body p-0 text-center">
                 <ul class="list-group">
                     <li class="list-group-item"><a href="../page/index.php?current=order-info&user=">訂單一覽</a></li>
-                    <li class="list-group-item"><a href="../page/index.php?current=order-item&order_info=">訂單物品</a></li>
+                    <!-- <li class="list-group-item"><a href="../page/index.php?current=order-item&order_info=">訂單物品</a></li> -->
                     <li class="list-group-item"><a href="../page/index.php?current=order-item-filter&id_type=order_info&id=1&order_info=">訂單篩選</a></li>
                 </ul>
             </div>

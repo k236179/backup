@@ -33,7 +33,7 @@ $page_count = CEIL($total/$per_page);
     <nav aria-label="Page navigation example">
         <ul class="pagination">
             <?php for($i=1; $i<=$page_count;$i++): ?>
-                <li class="page-item <?php if($p==$i) echo "active"; ?> "><a class="page-link" href="../page/index.php?current=order-item&p=<?=$i?>"><?=$i?></a></li>
+                <li class="page-item <?php if($p==$i) echo "active"; ?> "><a class="page-link" href="../page/index.php?current=order-info&p=<?=$i?>"><?=$i?></a></li>
             <?php endfor; ?>
          </ul>
     </nav>
@@ -77,10 +77,10 @@ $page_count = CEIL($total/$per_page);
                     <span class="text-muted"><small><?=$row["address"]?></small></span>
                 </td>
                 <td colspan="2" class="text-center">
-                    <button type="button" class="btn-sm btn-success">
-                        商品清單
+                    <button type="button" class="btn-sm btn-success"><a class="text-decoration-none text-white"  href="../components/order-info-list.php?id=<?=$row["id"]?>">商品清單</a>
+                        
                     </button>
-                    <button type="button" class="btn-sm btn-success">詳細</button>
+                    <button type="button" class="btn-sm btn-success"> <a class="text-decoration-none text-white" href="../components/detail-order-info.php?id=<?=$row["id"]?>">詳細</a> </button>
                     <button type="button" class="btn-sm btn-warning"> <a class="text-decoration-none text-white"  href="../components/edit_order_info.php?id=<?=$row["id"]?>">編輯</a> </button>
                     <button type="button" class="btn-sm btn-danger"> <a class="text-white text-decoration-none" href="../components/delete_order_info.php?id=<?=$row["id"]?>">刪除</a> </button>
                 </td>

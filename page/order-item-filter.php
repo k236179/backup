@@ -60,6 +60,8 @@ $rows_num = $result->num_rows;
           <div>
               <button type="submit" class="btn btn-secondary">篩選</button>
           </div>
+
+          
       </form>
 
       <?php if($id_type == "order_info"&& $rows_num >0): ?>
@@ -87,8 +89,8 @@ $rows_num = $result->num_rows;
             </div>
             <div class="row">
                 <div class="btn-group" role="group" aria-label="Basic outlined example">
-                    <button type="button" class="btn btn-outline-primary">編輯</button>
-                    <button type="button" class="btn btn-outline-primary">刪除</button>
+                <a href="../components/edit_order_info_filter.php?id=<?=$rows[0]["id"]?>" class="btn btn-outline-primary">編輯</a>
+                <a href="../components/delete_order_info.php?id=<?=$rows[0]["id"]?>" class="btn btn-outline-primary">刪除</a>
                     <button type="button" class="btn btn-outline-primary">問題</button>
                 </div>
                 <p class="text-center m-2"><small class="text-muted">下單時間 : <?=$rows[0]["create_time"]?></small></p>
@@ -96,7 +98,7 @@ $rows_num = $result->num_rows;
         </div>
     </div>
            <?php foreach($rows as $row): ?>
-            <span><?=$row["product_name"]?></span>
+            <label class="btn btn-outline-primary" for="btncheck1"><span><?=$row["product_name"]?></span></label>
         <?php endforeach; ?>
         <?php endif; ?>
          <!--id_type=user_id-->
@@ -119,8 +121,8 @@ $rows_num = $result->num_rows;
             </div>
             <div class="row">
                 <div class="btn-group" role="group" aria-label="Basic outlined example">
-                    <button type="button" class="btn btn-outline-primary">編輯</button>
-                    <button type="button" class="btn btn-outline-primary">刪除</button>
+                    <a href="../components/edit_order_info_filter.php?id=<?=$rows[0]["id"]?>" class="btn btn-outline-primary">編輯</a>
+                    <a href="../components/delete_order_info.php?id=<?=$rows[0]["id"]?>" class="btn btn-outline-primary">刪除</a>
                     <button type="button" class="btn btn-outline-primary">問題</button>
                 </div>
                 <p class="text-center m-2"><small class="text-muted">註冊時間 : <?=$rows[0]["createTime"]?></small></p>
@@ -128,11 +130,15 @@ $rows_num = $result->num_rows;
         </div>
     </div>
            <?php foreach($rows as $row): ?>
-            <span>訂單 #<?=$row["id"]?> </span>
+             <label class="btn btn-outline-primary" for="btncheck1">訂單 #<?=$row["id"]?></label>
         <?php endforeach; ?>
       <?php endif; ?>
 
-     
+      
+ 
+
+  
+</div>
       
     </body>
 </html>
