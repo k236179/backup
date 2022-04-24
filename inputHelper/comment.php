@@ -22,19 +22,48 @@
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
 <script>
-// 宣告 欲送出的 [key]
-let keys = ["coupon_id", "product_id"]; //example
-//
-// 宣告 欲送出的 [value]
-let coupon_id = [1, 2, 3]; //example
-let product_id = [3, 2, 1]; //example
-//
+// AUTO_INCREMENT重新計算
+// alter table tablename AUTO_INCREMENT=1; 
+let contentList = [
+    "五星好評",
+    "66666666",
+    "現主時刷一整排愛心，漢堡",
+    "我吃了以後考試都考一百分",
+    "早上好中国，现在我有冰激淋，我很喜欢冰激淋",
+    "我前女友吃了以後跟我復合了",
+    "好吃新奇又好玩!",
+];
+let content = [];
+let user = [];
+let score = [];
+let product = [];
+
+randomNum(user, 200, 40);
+randomNum(product, 200, 100);
+randomNum(score, 200, 5);
+randomContent(content, 200, 7);
+
+function randomNum(arr, range, max) {
+    for (let i = 0; i < range; i++) {
+        arr.push(Math.ceil(Math.random() * max));
+    }
+    return arr;
+}
+
+function randomContent(arr, range, max) {
+    for (let i = 0; i < range; i++) {
+        arr.push(contentList[Math.floor(Math.random() * max)]);
+    }
+    return arr;
+}
+let keys = ["userId", "productId", "content", "score"];
+
 // 宣告 目標網址
-let url = "http://localhost:8080/project/api/coupon_valid_product/post.php"; //example
+let url = "http://localhost:8080/project/api/comment/post.php"; //example
 
 try {
     // 依序放入宣告完的變數 
-    multiInput(url, keys, coupon_id, product_id) //keys 順序對應 value 的放入順序
+    multiInput(url, keys, user, product, content, score) //keys 順序對應 value 的放入順序
 } catch (e) {
     sayError(e);
 };
