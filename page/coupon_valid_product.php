@@ -97,7 +97,7 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
                 <div class="col" scope="col"><?php
                                                 $title = "新增適用商品";
                                                 $formType = "post-couponValidProduct";
-                                                require("../components/post-offcanvas.php") ?></div>
+                                                require("../components/post-offcanvas.php") ?></div>.
             </div>
         </form>
 
