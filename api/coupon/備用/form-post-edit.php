@@ -15,6 +15,11 @@ $row = $result->fetch_assoc();
 if (!$row) {
      header("location: 404.php");
 }
+if (!isset($_GET["p"])) {
+     $p = 1;
+} else {
+     $p = $_GET["p"];
+}
 ?>
 
 
@@ -78,7 +83,7 @@ if (!$row) {
 
                               <button type="submit" class="btn btn-info text-white">儲存</button>
                               </button>
-                              <a class="btn btn-info text-white" href="http://localhost:8080/project/page/index.php?current=coupon>">取消</a>
+                              <a class="btn btn-info text-white" href="http://localhost:8080/project/page/index.php?current=coupon&p=<?= $p ?>">取消</a>
 
                          </div>
                     </form>
