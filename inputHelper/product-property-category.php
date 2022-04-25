@@ -31,7 +31,7 @@ let product_id = ["4", "1", "8", "2", "5", "7", "3"]; //example
 let category_id = ["12", "12", "12", "12", "12", "12", "12"]; //example
 //
 // 宣告 目標網址
-let url = "http://localhost/project/api/product/product-property-category-post.php"; //example
+let url = "http://localhost:8080/project/api/product/product-property-category-post.php"; //example
 
 try {
     // 依序放入宣告完的變數 
@@ -43,14 +43,13 @@ try {
 
 // 禮盒---------------------------------------------------------------------------------
 // 宣告 欲送出的 [key]
-let keys = ["product_id", "category_id"]; //example
+keys = ["product_id", "category_id"]; //example
 //
 // 宣告 欲送出的 [value]
-let product_id = ["4", "1", "8", "2", "5", "7", "3"]; //example
-let category_id = ["11", "2", "2", "2", "6", "6", "7"]; //example
+product_id = ["4", "1", "8", "2", "5", "7", "3"]; //example
+category_id = ["11", "2", "2", "2", "6", "6", "7"]; //example
 //
 // 宣告 目標網址
-let url = "http://localhost/project/api/product/product-property-category-post.php"; //example
 
 try {
     // 依序放入宣告完的變數 
