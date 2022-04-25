@@ -26,7 +26,7 @@ $row = $result->fetch_assoc();
       <div class="container">
           <div class="row justify-content-center">
               <div class="col-lg-4">
-                  <form action="../components/update.php" method="post">
+                  <form action="../components/update-user.php" method="post">
                     <table class="table table-bordered">
                         <input type="hidden" name="id" value="<?=$row["id"]?>">
                         <tr>

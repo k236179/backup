@@ -12,7 +12,7 @@ $name = $_POST["name"];
 $account = $_POST["account"];
 $password = $_POST["password"];
 $gender = $_POST["gender"];
-$birthday =  $_POST["startY"]."/".$_POST["startM"]."/".$_POST["startD"];
+$birthday =  $_POST["birthday"];
 $phone =  $_POST["phone"];
 $photo =  $_POST["photo"];
 $createTime = date('Y-m-d H:i:s');
@@ -33,4 +33,4 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-header("location: user-form.php");
+// header("location: user-form.php");
