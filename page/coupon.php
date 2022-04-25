@@ -1,31 +1,31 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT'] . "/project/project-conn.php");
 if (!isset($_GET["p"])) {
-     $p = 1;
+    $p = 1;
 } else {
-     $p = $_GET["p"];
+    $p = $_GET["p"];
 }
 if (!isset($_GET["type"])) {
-     $type = "1";
+    $type = "1";
 } else {
-     $type = $_GET["type"];
+    $type = $_GET["type"];
 }
 
 
 switch ($type) {
-          // 如果type的值是1的話
-     case "1":
-          $order = "limited ASC";
-          break;
-     case "2":
-          $order = "limited DESC";
-          break;
-     case "3":
-          $order = "discount ASC";
-          break;
-     case "4":
-          $order = "discount DESC";
-          break;
+        // 如果type的值是1的話
+    case "1":
+        $order = "limited ASC";
+        break;
+    case "2":
+        $order = "limited DESC";
+        break;
+    case "3":
+        $order = "discount ASC";
+        break;
+    case "4":
+        $order = "discount DESC";
+        break;
 }
 
 //計算總共有幾筆資料
@@ -87,9 +87,9 @@ $page_count = CEIL($total / $per_page);
                 </th>
                 <th><img src="../img/icon/valid.png" class="img-fluid rounded-start" style="max-width:25px" /> 啟用</th>
                 <th scope="col"><?php
-                                        $title = "新增優惠券";
-                                        $formType = "post-coupon";
-                                        require("../components/post-offcanvas.php") ?></th>
+                                $title = "新增優惠券";
+                                $formType = "post-coupon";
+                                require("../components/post-offcanvas.php") ?></th>
             </tr>
         </thead>
         <tbody>
@@ -103,12 +103,12 @@ $page_count = CEIL($total / $per_page);
                 <td><?= $row["discount"] ?>%</td>
                 <td colspan="2"><?= $row["expiry"] ?></td>
                 <td><?php
-                              if ($row["limited"] == 0) {
-                                   echo "無限制使用次數";
-                              } else {
-                                   echo $row["limited"];
-                              }
-                              ?></td>
+                        if ($row["limited"] == 0) {
+                            echo "無限制使用次數";
+                        } else {
+                            echo $row["limited"];
+                        }
+                        ?></td>
                 <td><?= $row["valid"] ?></td>
                 <td></td>
 
@@ -123,7 +123,9 @@ $page_count = CEIL($total / $per_page);
                     <button type="button" class="btn-sm btn-info ">
                         <a class="text-white"
                             href="/project/page/index.php?id_type=coupon_id&id=<?= $row["id"] ?>&current=coupon_valid_product">詳細資訊</a></button>
-                    <?php require("../components/edit-modal-coupon.php") ?>
+                    <?php
+                        $edit_type = "edit-coupon";
+                        require("../components/edit-modal.php") ?>
                     <button type="button" class="btn-sm btn-danger ">
                         <a class="text-white"
                             href="/project/api/coupon/備用/form-post-delete.php?id=<?= $row["id"] ?>">刪除</a></button>

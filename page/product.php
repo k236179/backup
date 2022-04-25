@@ -70,8 +70,9 @@ $launchedList = array("NO", "YES");
             </td>
             <td colspan="3" class="text-center">
                 <button type="button" class="btn-sm btn-success">詳細</button>
-                <button type="button" class="btn-sm btn-warning"> <a class="text-light"
-                        href="../components/update-product-form.php?id=<?= $row["id"] ?>">編輯</a> </button>
+                <?php
+                    $edit_type = "edit-product";
+                    require("../components/edit-modal.php") ?>
                 <button type="button" class="btn-sm btn-danger"><a href="../api/product/delete.php?id=<?= $row["id"] ?>"
                         class="btn-sm btn-danger">刪除</a></button>
             </td>
