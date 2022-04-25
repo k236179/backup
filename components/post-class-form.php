@@ -1,35 +1,25 @@
 <!-- 表單 -->
-<form action="../api/class/post.php" method="POST">
-    <!-- 普通欄位 -->
-    <div class="mb-3">
-        <label for="name" class="form-label">商品名稱</label>
-        <input type="text" class="form-control" name="name" id="name" placeholder="商品名稱">
-    </div>
-    <div class="mb-3">
-        <label for="price" class="form-label">價格
-        </label>
-        <input type="number" class="form-control" name="price" id="price" min="0" placeholder="商品價格">
-    </div>
-    <div class="mb-3">
-        <label for="express" class="form-label">配送方式</label>
-        <input type="number" class="form-control" name="express" id="express" min="0" max="2"
-            placeholder="1:常溫, 2:低溫, 0:不可配送">
-    </div>
-    <div class="mb-3">
-        <label for="inventory" class="form-label">庫存</label>
-        <input type="number" class="form-control" name="inventory" id="inventory" min="0" placeholder="商品庫存">
-    </div>
-    <div class="mb-3">
-        <label for="launched" class="form-label">上/下架</label>
-        <input type="number" class="form-control" name="launched" id="launched" min="0" max="1"
-            placeholder="1:上架, 0:下架">
-    </div>
-
-    <!-- 文字方塊 -->
-    <div class="mb-3">
-        <label for="description" class="form-label">產品說明</label>
-        <textarea class="form-control" name="description" id="description" rows="3" placeholder="產品說明文字"></textarea>
-    </div>
+<form action="../api/class/post_class.php" method="POST">
+            <div class="mb-2">
+                <label for="name">Name</label>
+                <input type="text" id="name" class="form-control" name="name" required>
+            </div>
+            <div class="mb-2">
+                <label for="price">Price</label>
+                <input type="price" id="price" class="form-control" name="price" required>
+            </div>
+            <div class="mb-2">
+                <label for="description">Description</label>
+                    <input type="text" id="description" class="form-control" name="description" >
+            </div>
+            <div class="mb-2">
+                <label for="date">Date</label>
+                <input type="date" id="date" class="form-control" name="date" required>
+            </div>
+            <div class="mb-2">
+                <label for="duration">duration</label>
+                    <input type="" id="duration" class="form-control" name="duration" >
+            </div>
 
     <!-- 圖片上傳 -->
     <div class="mb-3">

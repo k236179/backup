@@ -11,15 +11,15 @@ $conn->close();
 
 ?>
 
-<table class="table">
+<table class="table table-striped table-hover my-3">
     <thead>
         <tr>
-            <th scope="col">#</th>
-            <th scope="col">Coupon</th>
-            <th scope="col">Class</th>
-            <th scope="col">btn1</th>
-            <th scope="col">btn2</th>
-            <th scope="col"><?php
+            <th>編號</th>
+            <th>Coupon</th>
+            <th>Class</th>
+            <th>btn1</th>
+            <th>btn2</th>
+            <th><?php
                             $title = "新增適用課程";
                             $formType = "post-couponValidClass";
                             require("../components/post-offcanvas.php") ?></th>
@@ -31,8 +31,8 @@ $conn->close();
             <th scope="row"><?= $row["id"] ?></th>
             <td><?= $row["coupon"] ?></td>
             <td><?= $row["class"] ?></td>
-            <td><a class="btn btn-info text-white" href="edit_coupon.php?id=<?= $row["id"] ?>">編輯</a></td>
-            <td><a class="btn btn-danger text-white" href="delete_coupon.php?id=<?= $row["id"] ?>">刪除</a></td>
+            <td><a class="btn btn-sm btn-warning" href="/project/api/coupon_valid_class/edit_coupon.php?id=<?= $row["id"] ?>">編輯</a></td>
+            <td><a class="btn btn-sm btn-danger" href="/project/api/coupon_valid_class/delete_coupon.php?id=<?= $row["id"] ?>">刪除</a></td>
         </tr>
         <?php endforeach; ?>
     </tbody>

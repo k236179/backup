@@ -1,4 +1,4 @@
-<form action="../api/coupon_valid_product/post.php" method="post">
+<form action="../api/coupon_valid_class/post.php" method="post">
     <div class="mb-2">
         <label for="name">coupon</label>
         <input type="text" id="coupon" class="form-control" name="coupon" required>
