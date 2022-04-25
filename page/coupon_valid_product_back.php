@@ -2,20 +2,13 @@
 require($_SERVER['DOCUMENT_ROOT'] . "/project/project-conn.php");
 
 if (isset($_GET["id_type"]) && isset($_GET["id"])) {
+
+
+
+
      $id_type = $_GET["id_type"];
      $id = $_GET["id"];
-
-     $sql = "SELECT coupon_valid_product. * 
-     FROM product,coupon_valid_product,coupon 
-     WHERE coupon.id=coupon_valid_product.coupon_id 
-     AND product.id=coupon_valid_product.product_id AND $id_type=$id ";
-     $resultNumRows = $conn->query($sql);
-     $rowCount = $resultNumRows->num_rows;
-
-     if ($rowCount > 0) {
-          $id_type = $_GET["id_type"];
-          $id = $_GET["id"];
-          $sql = "SELECT coupon_valid_product. * , 
+     $sql = "SELECT coupon_valid_product. * , 
     -- 以什麼資料夾為基準↑
     product.name AS pro_name ,
     -- 因為coupon 與 product 兩個檔案有相同的name所以我設定product的name 變更為 pro_name
@@ -35,14 +28,8 @@ if (isset($_GET["id_type"]) && isset($_GET["id"])) {
     AND product.id=coupon_valid_product.product_id 
     -- 將這些資料合併的基準是什麼以上面的方式呈現
     AND $id_type=$id ";
-          $result = $conn->query($sql);
-          $rows = $result->fetch_all(MYSQLI_ASSOC);
-     } else {
-
-          echo  "$id_type # $id 資料為空";
-          exit;
-     }
 } else {
+
      $id_type = "product_id";
      $id = 1;
      $sql = "SELECT coupon_valid_product. * , 
@@ -59,11 +46,12 @@ if (isset($_GET["id_type"]) && isset($_GET["id"])) {
     FROM product,coupon_valid_product,coupon 
     WHERE coupon.id=coupon_valid_product.coupon_id 
     AND product.id=coupon_valid_product.product_id  ";
-     $result = $conn->query($sql);
-     $rows = $result->fetch_all(MYSQLI_ASSOC);
 }
 
 
+
+$result = $conn->query($sql);
+$rows = $result->fetch_all(MYSQLI_ASSOC);
 
 
 
