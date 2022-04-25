@@ -26,19 +26,18 @@
 let keys = ["name", "account", "password", "gender", "birthday", "phone", "photo"]; //example
 //
 // 宣告 欲送出的 [value]
-let name = ["leo", "joe", "rose", "angle", "sam", "kelly", "ken", "jake", "hal", "zoe", "lucy", "mary",
-    "karen", "josie", "abel", "adolf", "basil", "annie", "curt", "cheryl", "cindy", "diane", "ellie", "frieda",
-    "una", "angus", "arthur", "barry", "caesa", "clark", "donna", "dorothy", "dolly", "judy", "kimberly", "don",
-    "david", "dale", "ed", "nicholas"
+let name = ["陳冠廷", "陳冠宇", "陳宗翰", "陳家豪", "陳彥廷", "陳承翰", "陳柏翰", "陳宇軒", "陳家瑋", "陳冠霖", "陳雅婷", "陳雅筑",
+    "陳怡君", "陳佳穎", "陳怡萱", "陳宜庭", "陳郁婷", "陳怡婷", "陳詩涵", "陳鈺婷", "林冠廷", "林冠宇", "林宗翰", "林家豪", "林彥廷", "林承翰", "林柏翰", "林宇軒", "林家瑋", "林冠霖", "林雅婷", "林雅筑",
+    "林怡君", "林佳穎", "林怡萱", "林宜庭", "林郁婷", "林怡婷", "林詩涵", "林鈺婷"
 ]; //example
-let account = ["leo1", "joe2", "rose3", "angle4", "sam5", "kelly6", "ken7", "jake8", "hal9", "zoe10",
-    "lucy11", "mary12", "karen13", "josie14", "abel15", "adolf16", "basil17", "annie18", "curt19", "cheryl20",
-    "cindy21", "diane22", "ellie23", "frieda24", "una25", "angus26", "arthur27", "barry28", "caesa29", "clark30",
-    "donna31", "dorothy32", "dolly33", "judy34", "kimberly35", "don36", "david37", "dale38", "ed39", "nicholas40"
+let account = ["leo1@example.com", "joe2@example.com", "rose3@example.com", "angle4@example.com", "sam5@example.com", "kelly6@example.com", "ken7@example.com", "jake8@example.com", "hal9@example.com", "zoe10@example.com",
+    "lucy11@example.com", "mary12@example.com", "karen13@example.com", "josie14@example.com", "abel15@example.com", "adolf16@example.com", "basil17@example.com", "annie18@example.com", "curt19@example.com", "cheryl20@example.com",
+    "cindy21@example.com", "diane22@example.com", "ellie23@example.com", "frieda24@example.com", "una25@example.com", "angus26@example.com", "arthur27@example.com", "barry28@example.com", "caesa29@example.com", "clark30@example.com",
+    "donna31@example.com", "dorothy32@example.com", "dolly33@example.com", "judy34@example.com", "kimberly35@example.com", "don36@example.com", "david37@example.com", "dale38@example.com", "ed39@example.com", "nicholas40@example.com"
 ]; //example
-let password = ["123", "123", "123", "123", "123", "123", "123", "123", "123", "123", "123", "123", "123", "123", "123",
-    "123", "123", "123", "123", "123", "123", "123", "123", "123", "123", "123", "123", "123", "123", "123",
-    "123", "123", "123", "123", "123", "123", "123", "123", "123", "123"
+let password = ["password123", "password123", "password123", "password123", "password123", "password123", "password123", "password123", "password123", "password123", "password123", "password123", "password123", "password123", "password123",
+    "password123", "password123", "password123", "password123", "password123", "password123", "password123", "password123", "password123", "password123", "password123", "password123", "password123", "password123", "password123",
+    "password123", "password123", "password123", "password123", "password123", "password123", "password123", "password123", "password123", "password123"
 ]; //example
 let gender = ["0", "0", "1", "1", "0", "1", "0", "0", "0", "1", "1", "1", "1", "1", "0", "0", "0", "1", "0", "1", "1",
     "1",
