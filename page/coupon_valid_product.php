@@ -4,10 +4,10 @@ require($_SERVER['DOCUMENT_ROOT'] . "/project/project-conn.php");
 if (isset($_GET["id_type"]) && isset($_GET["id"])) {
 
 
+
+
     $id_type = $_GET["id_type"];
     $id = $_GET["id"];
-
-
     $sql = "SELECT coupon_valid_product. * , 
     -- 以什麼資料夾為基準↑
     product.name AS pro_name ,
