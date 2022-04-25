@@ -102,9 +102,9 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
 
             </tbody>
         </table>
-        <div class="d-flex justify-content-end">
-            <button class="btn btn-secondary me-2" type="submit">完成</button>
-            <a class="btn btn-secondary" href="../page/index.php?current=order-info">取消</a>
+        <div class="text-end">
+            <button type="submit" class="btn btn-info text-white">儲存</button>
+        </div>
         </div>
     </form>
 

@@ -99,11 +99,10 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
                 <?php endforeach; ?>
 
             </table>
-
-            <div class="py-2 text-end">
+            <div class="text-end">
                 <button type="submit" class="btn btn-info text-white">儲存</button>
-                <a class="btn btn-secondary" href="../page/index.php?current=product">取消</a>
             </div>
+
         </form>
     </div>
 

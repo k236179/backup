@@ -76,6 +76,9 @@ if (!isset($_GET["p"])) {
                     </tr>
 
                 </table>
+                <div class="text-end">
+                    <button type="submit" class="btn btn-info text-white">儲存</button>
+                </div>
             </form>
         </div>
     </div>
