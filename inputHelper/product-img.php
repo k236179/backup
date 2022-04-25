@@ -28,12 +28,14 @@
 let keys = ["name", "product_id"]; //example
 //
 // 宣告 欲送出的 [value]
-let name = ["三入餅乾禮盒-1.jpg", "夾心餅乾禮盒-1.jpg", "磅蛋糕綜合禮盒-1.jpg", "9入小塔禮盒.jpg", "費南雪禮盒-1.jpg", "大甲芋泥奶茶千層蛋糕.jpg", "瑪德蓮禮盒-1.jpg", "六入罐裝餅乾禮盒-1.jpg"]; //example
+let name = ["三入餅乾禮盒-1.jpg", "夾心餅乾禮盒-1.jpg", "磅蛋糕綜合禮盒-1.jpg", "9入小塔禮盒.jpg", "費南雪禮盒-1.jpg", "大甲芋泥奶茶千層蛋糕.jpg",
+    "瑪德蓮禮盒-1.jpg", "六入罐裝餅乾禮盒-1.jpg"
+]; //example
 let product_id = ["1", "2", "3", "4", "5", "6", "7", "8"]; //example
 
 //
 // 宣告 目標網址
-let url = "http://localhost/real-project/api/product/product-img-post.php"; //example
+let url = "http://localhost:8080/project/api/product/product-img-post.php"; //example
 
 try {
     // 依序放入宣告完的變數 
