@@ -104,7 +104,7 @@ $rowsLength = $result->num_rows;
                     <div class="card m-3" style="max-width: 500px">
                         <div class="row g-0 align-items-center">
                         <div class="col ">
-                            <img class="w-100" src="../img/user/user001.jpg" alt="">
+                            <img class="w-100" src="../img/product/<?=$row["productName"]?>.jpg" alt="">
                         </div>  
                             <div class="col-md-8">
                                 <div class="card-body">
@@ -119,7 +119,7 @@ $rowsLength = $result->num_rows;
     <?php else : ?>
             <div class="row">
                     <div class="col-3">
-                     <img class="w-100" src="../img/user/user001.jpg" alt="">
+                     <img class="w-100" src="../img/product/<?=$rows[0]["productName"]?>.jpg" alt="">
                     </div>
                 <div class="col">
                     <ul class="list-group list-group-flush">

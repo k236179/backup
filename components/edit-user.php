@@ -30,64 +30,64 @@ $row = $result->fetch_assoc();
                     <table class="table table-bordered">
                         <input type="hidden" name="id" value="<?=$row["id"]?>">
                         <tr>
-                            <th>id</th>
+                            <th>#</th>
                             <td><?=$row["id"]?></td>
                         </tr>
                         <tr>
-                            <th>name</th>
+                            <th>姓名</th>
                             <td>
                                 <input class="form-control"
                                 name="name" type="text" value="<?=$row["name"]?>">
                             </td>
                         </tr>
                         <tr>
-                            <th>account</th>
+                            <th>帳號</th>
                             <td>
                             <input class="form-control"
                             name="account" type="text" value="<?=$row["account"]?>">
                             </td>
                         </tr>
                         <tr>
-                            <th>password</th>
+                            <th>密碼</th>
                             <td>
                                 <input class="form-control" 
                                 name="password" type="password" value="<?=$row["password"]?>">
                             </td>
                         </tr>
                         <tr>
-                            <th>gender</th>
+                            <th>性別</th>
                             <td>
                                 <input class="form-control" 
                                 name="gender" type="text" value="<?=$row["gender"]?>">
                             </td>
                         </tr>
                         <tr>
-                            <th>birthday</th>
+                            <th>生日</th>
                             <td>
                             <input class="form-control" 
                                 name="birthday" type="date" value="<?=$row["birthday"]?>">
                             </td>
                         </tr>
                         <tr>
-                            <th>phone</th>
+                            <th>電話</th>
                             <td>
                             <input class="form-control" 
                                 name="phone" type="number" value="<?=$row["phone"]?>">
                             </td>
                         </tr>
                         <tr>
-                            <th>photo</th>
+                            <th>照片</th>
                             <td>
                             <input class="form-control" 
                                 name="photo" type="text" value="<?=$row["photo"]?>">
                             </td>
                         </tr>
                         <tr>
-                            <th>createTime</th>
+                            <th>建立時間</th>
                             <td><?=$row["createTime"]?></td>
                         </tr>
                         <tr>
-                            <th>valid</th>
+                            <th>軟刪除</th>
                             <td><input class="form-control" 
                                 name="valid" type="text" value="<?=$row["valid"]?>">
                                 </td>
