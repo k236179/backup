@@ -1,11 +1,31 @@
 <!-- 新增/顯示所有資料筆數及部分細節表單 -->
 
 <?php
+require($_SERVER['DOCUMENT_ROOT'] . "/project/project-conn.php");
+
+if (!isset($_GET["p"])) {
+    $p = 1;
+} else {
+    $p = $_GET["p"];
+}
+
+$per_page = 6;
+$start = ($p - 1) * $per_page;
+
+
+
+
 $id_type = $_GET["id_type"];
 $id = $_GET["id"];
 
-require($_SERVER['DOCUMENT_ROOT'] . "/project/project-conn.php");
 if ($id_type == "product" & $id != "") {
+
+    //計算頁數
+    $pageSql = "SELECT * FROM comment,product,user WHERE comment.user=user.id AND comment.product=product.id AND $id_type=$id";
+    $result = $conn->query($pageSql);
+    $total = $result->num_rows;
+    $page_count = CEIL($total / $per_page);
+
     $sqlSELECT = "SELECT comment.*,
     user.name AS userName,
     user.photo AS userPhoto,
@@ -16,8 +36,14 @@ if ($id_type == "product" & $id != "") {
     product.createTime AS data05,
     product.description AS data06,
     product.inventory AS data07";
-    $sqlWHERE = "WHERE comment.product=product.id AND comment.user=user.id AND $id_type=$id";
+    $sqlWHERE = "WHERE comment.product=product.id AND comment.user=user.id AND $id_type=$id LIMIT $start, $per_page";
 } else if ($id_type == "user" & $id != "") {
+    //計算頁數
+    $pageSql = "SELECT * FROM comment,product,user WHERE comment.user=user.id AND comment.product=product.id AND $id_type=$id";
+    $result = $conn->query($pageSql);
+    $total = $result->num_rows;
+    $page_count = CEIL($total / $per_page);
+
     $sqlSELECT = "SELECT comment.*,
     product.name AS productName,
     product.id AS productId,
@@ -29,10 +55,21 @@ if ($id_type == "product" & $id != "") {
     user.phone AS data06,
     user.photo AS data07,
     user.createTime AS data08";
-    $sqlWHERE = "WHERE comment.product=product.id AND comment.user=user.id AND $id_type=$id";
+    $sqlWHERE = "WHERE comment.product=product.id AND comment.user=user.id AND $id_type=$id LIMIT $start, $per_page";
+    //計算頁數
+    $pageSql = "SELECT order_info.*, user.name FROM order_info, user WHERE order_info.user=user.id";
+    $result = $conn->query($pageSql);
+    $total = $result->num_rows;
+    $page_count = CEIL($total / $per_page);
 } else {
+    //計算頁數
+    $pageSql = "SELECT * FROM comment,product,user WHERE comment.user=user.id AND comment.product=product.id";
+    $result = $conn->query($pageSql);
+    $total = $result->num_rows;
+    $page_count = CEIL($total / $per_page);
+
     $sqlSELECT = "SELECT comment.*,product.name AS proName,user.name AS userName";
-    $sqlWHERE = "WHERE comment.product=product.id AND comment.user=user.id";
+    $sqlWHERE = "WHERE comment.product=product.id AND comment.user=user.id LIMIT $start, $per_page";
 }
 
 $sqlFROM = "FROM comment,product,user";
@@ -60,15 +97,17 @@ $i = 1;
                 </select>
             </div>
             <div class="col"> <label for="id" class="form-label">ID</label>
-                <input type="number" id="id" class="form-control" name="id" placeholder="輸入 # ID" required>
+                <input type="number" id="id" class="form-control" name="id" placeholder="輸入 # ID" min="1" required>
             </div>
         </div>
         <input type="hidden" name="current" value="comment_filter">
         <button type="submit" class="btn btn-primary">Submit</button>
     </fieldset>
 </form>
+
 <!-- 篩選product -->
 <!-- 篩選product -->
+
 <?php if ($id_type == "product" & $id != "") : ?>
 <h5><strong>本次篩選結果:</strong></h5>
 
@@ -238,4 +277,15 @@ $i = 1;
 
     </table>
     <?php endif; ?>
+    <div>
+        <nav aria-label="Page navigation ">
+            <ul class="pagination  d-flex justify-content-around">
+                <?php for ($i = 1; $i <= $page_count; $i++) : ?>
+                <li class="page-item <?php if ($p == $i) echo "active"; ?> "><a class="page-link"
+                        href="../page/index.php?current=order-info&p=<?= $i ?>"><?= $i ?></a></li>
+                <?php endfor; ?>
+            </ul>
+        </nav>
+        <div class="text-center">共<?= $total ?>筆資料，<?= $page_count ?>頁</div>
+    </div>
     <br>
