@@ -21,15 +21,7 @@
             <div class="col">
                 <input type="date" name="date1">
             </div>
-            <!-- <div class="col">
-                <input type="text" id="startY" class="form-control" name="startY" placeholder="YYYY" required>年
-            </div>
-            <div class="col">
-                <input type="text" id="startY" class="form-control" name="startM" placeholder="MM" required>月
-            </div>
-            <div class="col">
-                <input type="text" id="startY" class="form-control" name="startD" placeholder="DD" required>日
-            </div> -->
+
             <div class="col">
                 <input type="text" id="startY" value="12:00" class="form-control d-none" name="startH">
             </div>
@@ -38,15 +30,7 @@
                 <div class="col">
                     <input type="date" name="date2">
                 </div>
-                <!-- <div class="col">
-                    <input type="text" id="endY" class="form-control" name="endY" placeholder="YYYY" required>年
-                </div>
-                <div class="col">
-                    <input type="text" id="endM" class="form-control" name="endM" placeholder="MM" required>月
-                </div>
-                <div class="col">
-                    <input type="text" id="endD" class="form-control" name="endD" placeholder="DD" required>日
-                </div> -->
+
                 <div class="col">
                     <input type="text" id="endH" value="12:00" class="form-control d-none" name="endH">
                 </div>
