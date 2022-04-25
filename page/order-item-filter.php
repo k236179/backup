@@ -24,6 +24,8 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
 $rows_num = $result->num_rows;
 
 
+
+
 ?>
 
 <!doctype html>
@@ -49,7 +51,7 @@ $rows_num = $result->num_rows;
           </div>
       
              <div class="mb-2">
-              <input type="text" name="id" placeholder="請輸入ID">
+              <input type="text" name="id" placeholder="請輸入ID" Required>
             </div>
 
             <div class="mb-2">
@@ -135,10 +137,20 @@ $rows_num = $result->num_rows;
       <?php endif; ?>
 
       
- 
+        <?php if($id_type == "order_info" && $rows_num == 0):?>
+            <div style= "margin-top:10px; font-size:30px;">
+                <strong>搜尋結果為 查無資料</strong> 
+            </div>
+        <?php elseif($id_type == "user" && $rows_num == 0):?>
+        <div style= "margin-top:10px; font-size:30px;">
+                <strong>搜尋結果為 查無資料</strong> 
+            </div>
+        <?php endif; ?>
 
   
 </div>
+
+
       
     </body>
 </html>
