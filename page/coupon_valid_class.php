@@ -20,9 +20,9 @@ $conn->close();
             <th>btn1</th>
             <th>btn2</th>
             <th><?php
-                            $title = "新增適用課程";
-                            $formType = "post-couponValidClass";
-                            require("../components/post-offcanvas.php") ?></th>
+                    $title = "新增適用課程";
+                    $formType = "post-couponValidClass";
+                    require("../components/post-offcanvas.php") ?></th>
         </tr>
     </thead>
     <tbody>
