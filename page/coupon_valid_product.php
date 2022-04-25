@@ -4,10 +4,10 @@ require($_SERVER['DOCUMENT_ROOT'] . "/project/project-conn.php");
 if (isset($_GET["id_type"]) && isset($_GET["id"])) {
 
 
+
+
     $id_type = $_GET["id_type"];
     $id = $_GET["id"];
-
-
     $sql = "SELECT coupon_valid_product. * , 
     -- 以什麼資料夾為基準↑
     product.name AS pro_name ,
@@ -158,7 +158,7 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
             <?php else : ?>
                 <h3><?= $rows[0]["name"] ?></h3>
                 <ul class="list-group list-group-flush">
-                    <li class="fw-bolder list-group-item">折扣<?= $rows[0]["discount"] ?></li>
+                    <li class="fw-bolder list-group-item">折扣: <?= $rows[0]["discount"] ?></li>
                     <li class="fw-bolder list-group-item">使用期限: <?= $rows[0]["expiry"] ?></li>
                     <li class="fw-bolder list-group-item">使用次數: <?= $rows[0]["limited"] ?></li>
                 </ul>

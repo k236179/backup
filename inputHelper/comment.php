@@ -60,6 +60,8 @@ let keys = ["userId", "productId", "content", "score"];
 
 // 宣告 目標網址
 let url = "http://localhost:8080/project/api/comment/post.php"; //example
+console.log(url);;
+
 
 try {
     // 依序放入宣告完的變數 
