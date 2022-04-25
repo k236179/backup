@@ -110,6 +110,8 @@ $page_count = CEIL($total / $per_page);
                               }
                               ?></td>
                 <td><?= $row["valid"] ?></td>
+                <td></td>
+
             </tr>
             <tr>
                 <td class="text-center"><img style="width: 1.5rem;" src="../img/icon/sticky-notes.png" alt=""></td>
@@ -121,12 +123,13 @@ $page_count = CEIL($total / $per_page);
                     <button type="button" class="btn-sm btn-info ">
                         <a class="text-white"
                             href="/project/page/index.php?id_type=coupon_id&id=<?= $row["id"] ?>&current=coupon_valid_product">詳細資訊</a></button>
-                    <?php require("../components/edit-modal-coupn.php") ?>
+                    <?php require("../components/edit-modal-coupon.php") ?>
                     <button type="button" class="btn-sm btn-danger ">
                         <a class="text-white"
                             href="/project/api/coupon/備用/form-post-delete.php?id=<?= $row["id"] ?>">刪除</a></button>
 
                 </td>
+                <td></td>
             </tr>
 
             <?php endforeach; ?>

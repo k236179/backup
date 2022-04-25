@@ -40,12 +40,14 @@ $i = 1;
                 <button type="button" class="btn-sm btn-warning">隱藏</button>
                 <button type="button" class="btn-sm btn-danger">刪除</button>
             </td>
+
         </tr>
         <tr class="lh-lg">
             <td class="text-center"><img style="width: 1.5rem;" src="../img/icon/sticky-notes.png" alt=""></td>
             <td colspan="5">
                 <div style="max-height: 5rem;" class="overflow-auto"><?= $row["content"] ?></div>
             </td>
+
             <!-- <td class="text-center">
                 <button type="button" class="btn-sm btn-success">
                     商品清單
