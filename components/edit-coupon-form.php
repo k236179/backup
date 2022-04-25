@@ -40,45 +40,43 @@ if (!isset($_GET["p"])) {
 
 <body>
 
-    <div class="container">
-        <div class="row justify-conteat-center">
-            <div class="col">
-                <form action="http://localhost:8080/project/api/coupon/備用/blockListById.php" method="POST">
-                    <table class="table table-bordered">
-                        <input type="hidden" name="id" value="<?= $row["id"] ?>">
-                        <tr>
-                            <th>id</th>
-                            <td><?= $row["id"] ?></td>
-                        </tr>
-                        <tr>
-                            <th>name</th>
-                            <td><input class="form-control" type="text" name="name" value="<?= $row["name"] ?>"></td>
-                        </tr>
-                        <tr>
-                            <th>code</th>
-                            <td><input class="form-control" type="text" name="code" value="<?= $row["code"] ?>"></td>
-                        </tr>
-                        <tr>
-                            <th>discount</th>
-                            <td><input class="form-control" type="" name="discount" value="<?= $row["discount"] ?>">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>expiry</th>
-                            <td><input class="form-control" type="" name="expiry" value="<?= $row["expiry"] ?>"></td>
-                        </tr>
-                        <tr>
-                            <th>limited</th>
-                            <td><input class="form-control" type="" name="limited" value="<?= $row["limited"] ?>"></td>
-                        </tr>
-                        <tr>
-                            <th>valid</th>
-                            <td><input class="form-control" type="" name="valid" value="<?= $row["valid"] ?>"></td>
-                        </tr>
+    <div class="row justify-conteat-center">
+        <div class="col">
+            <form action="http://localhost:8080/project/api/coupon/備用/blockListById.php" method="POST">
+                <table class="table table-bordered">
+                    <input type="hidden" name="id" value="<?= $row["id"] ?>">
+                    <tr>
+                        <th>id</th>
+                        <td><?= $row["id"] ?></td>
+                    </tr>
+                    <tr>
+                        <th>name</th>
+                        <td><input class="form-control" type="text" name="name" value="<?= $row["name"] ?>"></td>
+                    </tr>
+                    <tr>
+                        <th>code</th>
+                        <td><input class="form-control" type="text" name="code" value="<?= $row["code"] ?>"></td>
+                    </tr>
+                    <tr>
+                        <th>discount</th>
+                        <td><input class="form-control" type="" name="discount" value="<?= $row["discount"] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>expiry</th>
+                        <td><input class="form-control" type="" name="expiry" value="<?= $row["expiry"] ?>"></td>
+                    </tr>
+                    <tr>
+                        <th>limited</th>
+                        <td><input class="form-control" type="" name="limited" value="<?= $row["limited"] ?>"></td>
+                    </tr>
+                    <tr>
+                        <th>valid</th>
+                        <td><input class="form-control" type="" name="valid" value="<?= $row["valid"] ?>"></td>
+                    </tr>
 
-                    </table>
-                </form>
-            </div>
+                </table>
+            </form>
         </div>
     </div>
     <!-- Bootstrap JavaScript Libraries -->

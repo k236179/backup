@@ -143,7 +143,9 @@ $page_count = CEIL($total / $per_page);
 
                               <button type="button" class="btn-sm btn-info ">
                                    <a class="text-white" href="/project/page/index.php?id_type=coupon_id&id=<?= $row["id"] ?>&current=coupon_valid_product">詳細資訊</a></button>
-                              <?php require("../components/edit-modal-coupon.php") ?>
+                              <?php
+                              $edit_type = "edit-coupon";
+                              require("../components/edit-modal.php") ?>
                               <button type="button" class="btn-sm btn-danger ">
                                    <a class="text-white" href="/project/api/coupon/備用/form-post-delete.php?id=<?= $row["id"] ?>">刪除</a></button>
 
